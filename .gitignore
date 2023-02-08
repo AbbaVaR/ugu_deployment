@@ -126,3 +126,8 @@ dmypy.json
 
 # TraceMode
 *.~prj
+
+.config
+*.nix
+*.db
+
