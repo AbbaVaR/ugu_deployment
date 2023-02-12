@@ -7,9 +7,9 @@ After=network.target
 User=
 Restart=on-failure
 RestartSec=5s
-WorkingDirectory=/home/runner/abbazov/ugu_deployment
-Environment="PATH=/home/runner/abbazov/ugu_deployment/venv/bin"
-ExecStart=/home/runner/abbazov/ugu_deployment/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:80 src.main:app
+WorkingDirectory=/home/abbazov/ugu_deployment
+Environment="PATH=/home/abbazov/ugu_deployment/venv/bin"
+ExecStart=/home/abbazov/ugu_deployment/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:80 src.main:app
 
 [Install]
 WantedBy=multi-user.target

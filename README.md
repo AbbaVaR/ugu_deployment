@@ -48,3 +48,6 @@
 * клиент необязательно осуществляет операции обналичивания денег. Каждая операция
 обналичивания денег обязательно связана с клиентом.
 
+docker:  
+* docker build -t ugu_deployment .
+* sudo docker run -d --name fastapi --rm  -p 7008:7000 ugu_deployment
