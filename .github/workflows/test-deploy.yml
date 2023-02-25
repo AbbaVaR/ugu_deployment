@@ -25,12 +25,12 @@ jobs:
         # Устанавливаем зависемости
       - name: Install dependencies
         run: pip install -r requirements.txt
-        # Запускаем тесты
-      # - name: Run tests
-      #   run: pytest
-      #   # Для успешного запуска тестов необходимо в переменную окружения DATABASE_URL записать корректную строку подключения к любой БД
-      #   env:
-      #     DATABASE_URL: sqlite:///./sqlite.db
+        Запускаем тесты
+      - name: Run tests
+        run: python -m pytest ./tests/test_api.py
+        # Для успешного запуска тестов необходимо в переменную окружения DATABASE_URL записать корректную строку подключения к любой БД
+        env:
+          DATABASE_URL: sqlite:///./sqlite.db
   # Задача развертывания
   deploy:
     name: Deploy to server
