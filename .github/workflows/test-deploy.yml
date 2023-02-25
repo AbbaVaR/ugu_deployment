@@ -30,7 +30,7 @@ jobs:
         run: python -m pytest
         # Для успешного запуска тестов необходимо в переменную окружения DATABASE_URL записать корректную строку подключения к любой БД
         env:
-          DATABASE_URL:  postgresql://${DB_USER}:${DB_PASSWD}@database:5432/test
+          DATABASE_URL: sqlite:///./sqlite.db
   # Задача развертывания
   deploy:
     name: Deploy to server
