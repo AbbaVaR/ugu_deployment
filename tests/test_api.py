@@ -1,3 +1,4 @@
+from os import environ
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -5,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from src.main import app, get_db
 from src.models import Base
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:1612@localhost/test_atm_BD"
+SQLALCHEMY_DATABASE_URL = environ.get('DATABASE_URL')
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 TestingSessionLocal = sessionmaker(
