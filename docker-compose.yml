@@ -24,6 +24,7 @@ services:
     # Указваем зависемости контейнера, например этому необходима БД
     depends_on:
       - database
+    restart: on-failure
 
   database:
     # Имя базового образа, здесь используем БД Postgres
