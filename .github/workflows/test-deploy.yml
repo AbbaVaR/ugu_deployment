@@ -68,10 +68,10 @@ jobs:
         run: rsync -rav .env yandex_server:~/ugu_deployment/.env
         # Останавливаем контейнеры на сервере
       - name: Stop containers
-        run: ssh yandex_server 'sudo docker-compose -f ugu_deployment/docker-compose.yml down'
+        run: ssh yandex_server 'sudo docker-compose -f ~/ugu_deployment/docker-compose.yml down'
         # Собираем контейнеры
       - name: Build containers
-        run: ssh yandex_server 'sudo docker-compose -f ugu_deployment/docker-compose.yml build'
+        run: ssh yandex_server 'sudo docker-compose -f ~/ugu_deployment/docker-compose.yml build'
         # Запускаем контейнеры
       - name: Run containers
-        run: ssh yandex_server 'sudo docker-compose -f ugu_deployment/docker-compose.yml up -d'
+        run: ssh yandex_server 'sudo docker-compose -f ~/ugu_deployment/docker-compose.yml up -d'
